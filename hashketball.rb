@@ -1,7 +1,7 @@
 # Write your code here!
 require "pry"
 
-def game_hash                                         #create a hash
+def game_hash                                         
 
   game_hash = {                                       #game_hash
     :home => {
@@ -156,16 +156,18 @@ def team_names
   end
   
 def player_numbers(team)
-  numbers_array = []                               #new array
+    number_array = []                                   #new array
   game_hash.each do |key, value|                  #iterate thru game_hash
     value[:players].each do |name, stat|          #iterate thru :players
       if value[:team_name] == team                #if values in team match :team_name
-        numbers_array << stat[:number]            #push :number into the new array
+        number_array << stat[:number]            #push :number into the new array
       end
     end
   end
-  return numbers_array
+  return number_array
 end
+
+  
 
 def player_stats(player)
   game_hash.each do |key, value|
